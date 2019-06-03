@@ -166,7 +166,7 @@ func Import(c *cli.Context) {
 						continue
 					}
 					column := nmon.DataSeries[name].Columns[i]
-					tags := map[string]string{"host": nmon.Hostname, "name": column}
+					tags := map[string]string{"host": nmon.Hostname, "file": nmonFile.Name, "name": column}
 
 					// try to convert string to integer
 					converted, parseErr := strconv.ParseFloat(value, 64)
